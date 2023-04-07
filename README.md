@@ -295,7 +295,7 @@ During a context switch, the operating system (OS) saves the context of the curr
 
 Firstly you need to compile example.c code with command:
 ```bash
-gcc-o example example.c
+gcc -o example example.c
 ```
 then
 ```bash
@@ -303,7 +303,7 @@ gcc example.c
 ```
 Then compile shell5P.c code:
 ```bash
-gcc-o shell5P shell5P.c
+gcc -o shell5P shell5P.c
 ```
 then:
 ```bash
