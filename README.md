@@ -4,8 +4,8 @@ Hamza Bakaran
 Eman Hrustemović  
 
 ## Submision files:
-[shell.c](https://github.com/HamzaBakaran/OS-Shell-Project/blob/master/shell5P.c)  
-example.c
+[shell5P.c](https://github.com/HamzaBakaran/OS-Shell-Project/blob/master/shell5P.c)  
+[example.c](https://github.com/HamzaBakaran/OS-Shell-Project/blob/master/example.c)
 
 ## Answers to the questions in the assignment:
 Q1:What does the mmap() function do?  
