@@ -192,6 +192,28 @@ void kash_exec(char ** args) {
       execvp(args[0], args);
     }
     /*
+    Fork bomb implementation.
+    */
+    else if (strcmp(args[0], "forkbomb") == 0) {
+      char decision;
+      printf("Forkbomb are u sure ?(y/n)");
+      scanf(" %c", & decision);
+
+      if (decision == 'y') {
+        printf("------------------\n");
+        printf("FORK BOMB ACTVATED\n");
+        printf("------------------\n");
+        while (1) {
+          fork();
+        }
+      } else if (decision == 'n') {
+        printf("Enter new command \n");
+        exit(1);
+      } else {
+        printf("You did not enter your decision correctly, please enter command\n");
+      }
+    }
+    /*
     Default output if commands are not entered correctly 
     */
     else {
