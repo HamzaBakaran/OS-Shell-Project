@@ -7,6 +7,7 @@ shell5P.c
 example.c
 
 Answers to the questions in the assignment:
+Q1:
 The mmap() function is used for mapping between a process address space and either files or devices. When a file is mapped to a process address space, the file can be accessed like an array in the program. This is one of the most efficient ways to access data in the file and provides a seamless coding interface that is natural for a data structure that can be assessed without he abstraction of reading and writing from files. In this article, we are going to discuss how to use the mmap() function in Linux.
 Syntax:
 
@@ -80,6 +81,26 @@ if(err != 0){
 
 return 0;
 }
+
+Q2:
+During a context switch, the operating system (OS) saves the
+context of the currently running process, including its program
+counter (PC), general purpose registers, stack pointer, and other
+state information to memory. The OS then loads the context of a
+different process and starts executing it. This process of saving and
+restoring context allows the OS to switch between running
+processes on the same processor core. We generally do not want
+the OS to perform too many context switches because context
+switching is an expensive operation in terms of time and resources.
+Each context switch requires the OS to save and restore the state of
+a process, which takes time and consumes memory bandwidth.
+Additionally, each context switch causes the CPU's caches to be
+flushed, which can degrade performance. In environments with
+many processes and high contention for CPU resources, the OS
+may perform preemptive multitasking, where processes are
+preempted and their state saved to memory even if they are not
+blocked on I/O or waiting for a semaphore. In such cases, the OS may
+perform more context switches.
 
 
 How to run our shell:
