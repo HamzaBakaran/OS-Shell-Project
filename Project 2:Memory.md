@@ -22,19 +22,19 @@ The **mmap** system call is commonly used for memory mapping, which can be used 
 
 1. Include the necessary header files:  
 
-```
+```bash
 #include <sys/mman.h>
 #include <fcntl.h> // Only if you're mapping a file
 ```
 2. Determine the size of the memory you want to allocate. Typically, you would use the _**getpagesize()**_ function to get the system's page size:  
 
-```
+```bash
 size_t page_size = getpagesize();
 ```
 
 3. Call mmap to request a memory mapping:  
 
-```
+```bash
 void* mapping = mmap(NULL, page_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 ```
 
@@ -46,7 +46,7 @@ void* mapping = mmap(NULL, page_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_
 
 4.Check the return value of **mmap** to handle any errors. If **mmap** fails, it returns **MAP_FAILED**:  
 
-```
+```bash
 if (mapping == MAP_FAILED) {
     perror("mmap");
     // Handle the error
@@ -56,7 +56,7 @@ if (mapping == MAP_FAILED) {
 5.Use the allocated memory as needed. You can treat the **mapping** pointer as a regular memory buffer and perform read and write operations on it.    
 
 6.When you're done using the allocated memory, unmap it using **munmap**:
-```
+```bash
 munmap(mapping, page_size);
 ```
 
@@ -114,7 +114,7 @@ The mmap system call returns the starting address of the allocated memory region
 
 ###  Write a simple C program that runs for a long duration say, by pausing for user input or by sleeping. While the process is active, use the ps or any other similar command with suitable options, to measure the memory usage of the process. Specifically, measure the virtual memory size (VSZ) of the process, and the resident set size (RSS) of the process (which includes only the physical RAM pages allocated to the process).  
 
-```
+```bash
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -137,7 +137,7 @@ By running this program we obtained following:
 **RSS**:RSS (Resident Set Size): It represents the physical RAM pages allocated to the process. It indicates the actual memory used by the process that is present in physical RAM. The value is reported in kilobytes (KB). In this case, the process with PID 10219 has a resident set size of 944 KB.
 
 ### Add code to your simple program to memory map an empty page from the OS  
-```
+```bash
   #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -191,7 +191,7 @@ In summary, the increase in virtual memory usage (**VSZ**) indicates the reserve
 
 ###  Write some data into your memory mapped page and measure the virtual and physicalmemory usage again
 
-```
+```bash
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
