@@ -28,20 +28,20 @@ This is the number of bytes which to be mapped.
 This argument is used to control what kind of access is permitted. This argument may be logical ‘OR’ of the following flags PROT_READ | PROT_WRITE | PROT_EXEC | PROT_NONE.  The access types of read, write and execute are the permissions on the content.
 
 
-4. flags:
-This argument is used to control the nature of the map. Following are some common values of the flags:
+4. flags:  
+This argument is used to control the nature of the map. Following are some common values of the flags:  
 
-MAP_SHARED: This flag is used to share the mapping with all other processes, which are mapped to this object. Changes made to the mapping region will be written back to the file.
-MAP_PRIVATE: When this flag is used, the mapping will not be seen by any other processes, and the changes made will not be written to the file.
-MAP_ANONYMOUS / MAP_ANON: This flag is used to create an anonymous mapping. Anonymous mapping means the mapping is not connected to any files. This mapping is used as the basic primitive to extend the heap.
-MAP_FIXED: When this flag is used, the system has to be forced to use the exact mapping address specified in the address If this is not possible, then the mapping will be failed.
-5. filedes:
-This is the file descriptor which has to be mapped.
-6. offset:
-This is offset from where the file mapping started. In simple terms, the mapping connects to (offset) to (offset+length-1) bytes for the file open on filedes descriptor.
+MAP_SHARED: This flag is used to share the mapping with all other processes, which are mapped to this object. Changes made to the mapping region will be written back to the file.  
+MAP_PRIVATE: When this flag is used, the mapping will not be seen by any other processes, and the changes made will not be written to the file.  
+MAP_ANONYMOUS / MAP_ANON: This flag is used to create an anonymous mapping. Anonymous mapping means the mapping is not connected to any files. This mapping is used as the basic primitive to extend the heap.  
+MAP_FIXED: When this flag is used, the system has to be forced to use the exact mapping address specified in the address If this is not possible, then the mapping will be failed.  
+5. filedes:  
+This is the file descriptor which has to be mapped.  
+6. offset:  
+This is offset from where the file mapping started. In simple terms, the mapping connects to (offset) to (offset+length-1) bytes for the file open on filedes descriptor.  
 
-Return values:
-On success, the mmap() returns 0; for failure, the function returns MAP_FAILED.  
+Return values:  
+On success, the mmap() returns 0; for failure, the function returns MAP_FAILED.    
   
 Pictorially, we can represent the map function as follows:  
   
